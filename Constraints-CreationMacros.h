@@ -91,6 +91,7 @@
 
 #pragma mark - Aspect
 #define CONSTRAINT_SETTING_ASPECT(VIEW, ASPECT) [NSLayoutConstraint constraintWithItem: VIEW attribute: NSLayoutAttributeWidth relatedBy: NSLayoutRelationEqual toItem:VIEW attribute: NSLayoutAttributeHeight multiplier:(ASPECT) constant: 0.0f]
+#define CONSTRAINT_SETTING_ASPECT_BY_WIDTH(VIEW, ASPECT) [NSLayoutConstraint constraintWithItem: VIEW attribute: NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem:VIEW attribute: NSLayoutAttributeWidth multiplier:(ASPECT) constant: 0.0f]
 #define CONSTRAINT_SETTING_MIN_ASPECT(VIEW, ASPECT) [NSLayoutConstraint constraintWithItem: VIEW attribute: NSLayoutAttributeWidth relatedBy: NSLayoutRelationGreaterThanOrEqual toItem:VIEW attribute: NSLayoutAttributeHeight multiplier:(ASPECT) constant: 0.0f]
 #define CONSTRAINT_SETTING_MAX_ASPECT(VIEW, ASPECT) [NSLayoutConstraint constraintWithItem: VIEW attribute: NSLayoutAttributeWidth relatedBy: NSLayoutRelationLessThanOrEqual toItem:VIEW attribute: NSLayoutAttributeHeight multiplier:(ASPECT) constant: 0.0f]
 
@@ -210,6 +211,7 @@
 
 // Aspect
 #define CONSTRAIN_ASPECT(VIEW1, ASPECT) INSTALL_CONSTRAINTS(DEFAULT_LAYOUT_PRIORITY, @"Aspect", CONSTRAINT_SETTING_ASPECT(VIEW1, ASPECT))
+#define CONSTRAIN_ASPECT_BY_WIDTH(VIEW1, ASPECT) INSTALL_CONSTRAINTS(DEFAULT_LAYOUT_PRIORITY, @"Aspect", CONSTRAINT_SETTING_ASPECT_BY_WIDTH(VIEW1, ASPECT))
 
 #pragma mark - Content Size Layout
 
